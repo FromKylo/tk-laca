@@ -157,7 +157,8 @@ textarea {
     resize: none;
     outline: none;
     background: transparent;
-    color: #000;
+    color: transparent;
+    caret-color: #000;
     overflow: auto;
 }
 
