@@ -103,5 +103,75 @@
     "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1 style=\"color: blue; text-align: center;\">Hello World!</h1>\n</body>\n</html>",
     "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('background-color');",
     "successMsg": "Great! You added background-color to your styling toolkit."
+  },
+  {
+    "title": "Internal Style Sheets",
+    "instruction": "Instead of styling every single tag inline, you can use <b>Internal CSS</b>. By adding a <code>&lt;style&gt;</code> tag inside your <code>&lt;head&gt;</code>, you can style all elements of a certain type at once!<br><br><b>Example:</b><br><code>&lt;style&gt;<br>&nbsp;&nbsp;p { color: green; }<br>&lt;/style&gt;</code><br><br><b>Your Task:</b> Add a <code>&lt;style&gt;</code> tag inside the <code>&lt;head&gt;</code> and set the color of all <code>&lt;h1&gt;</code> tags to 'red'.",
+    "initialCode": "<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1>First Header</h1>\n  <h1>Second Header</h1>\n</body>\n</html>",
+    "validate": "return code.toLowerCase().includes('<style>') && code.toLowerCase().includes('</style>') && code.toLowerCase().includes('color') && code.toLowerCase().includes('red');",
+    "successMsg": "Magaling! You just styled multiple elements at once using Internal CSS."
+  },
+  {
+    "title": "CSS Classes",
+    "instruction": "What if you only want to style <i>some</i> elements? Use a <b>CSS Class</b>! In your CSS, start a class name with a period (like <code>.highlight</code>). Then, add <code>class=\"highlight\"</code> to your HTML tags.<br><br><b>Example:</b><br><code>.special { color: orange; }</code><br><code>&lt;p class=\"special\"&gt;Text&lt;/p&gt;</code><br><br><b>Your Task:</b> Create a class named <code>.blue-text</code> inside the <code>&lt;style&gt;</code> tag that changes the color to blue. Then, add <code>class=\"blue-text\"</code> to the second paragraph.",
+    "initialCode": "<html>\n<head>\n  <style>\n    \n  </style>\n</head>\n<body>\n  <p>Normal text.</p>\n  <p>Make me blue!</p>\n</body>\n</html>",
+    "validate": "return code.toLowerCase().includes('.blue-text') && code.toLowerCase().includes('color') && code.toLowerCase().includes('blue') && code.toLowerCase().includes('class=\"blue-text\"');",
+    "successMsg": "Nice one! Classes are reusable styles you can apply anywhere."
+  },
+  {
+    "title": "CSS IDs",
+    "instruction": "While classes can be used on many elements, an <b>ID</b> is for a single, unique element on the page. In CSS, IDs start with a hashtag (like <code>#main</code>). In HTML, you use <code>id=\"main\"</code>.<br><br><b>Example:</b><br><code>#header { text-align: center; }</code><br><code>&lt;h1 id=\"header\"&gt;Title&lt;/h1&gt;</code><br><br><b>Your Task:</b> Create an ID named <code>#hero</code> in the style tag that makes the text-align 'center'. Then, add that id to the <code>&lt;h1&gt;</code> tag.",
+    "initialCode": "<html>\n<head>\n  <style>\n    \n  </style>\n</head>\n<body>\n  <h1>Welcome!</h1>\n</body>\n</html>",
+    "validate": "return code.toLowerCase().includes('#hero') && code.toLowerCase().includes('text-align') && code.toLowerCase().includes('center') && code.toLowerCase().includes('id=\"hero\"');",
+    "successMsg": "Astig! IDs are perfect for unique sections of your website."
+  },
+  {
+    "title": "HTML Tables",
+    "instruction": "To display data in a grid, we use tables! A table is wrapped in <code>&lt;table&gt;</code>. Inside, we create rows with <code>&lt;tr&gt;</code> (table row), and inside rows, we add cells with <code>&lt;td&gt;</code> (table data).<br><br><b>Example:</b><br><code>&lt;table&gt;<br>&nbsp;&nbsp;&lt;tr&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Cell 1&lt;/td&gt;<br>&nbsp;&nbsp;&lt;/tr&gt;<br>&lt;/table&gt;</code><br><br><b>Your Task:</b> Create a table with exactly one row (<code>&lt;tr&gt;</code>) and two data cells (<code>&lt;td&gt;</code>). Put 'Apple' in the first cell and 'Banana' in the second.",
+    "initialCode": "<!-- Write your table below -->\n",
+    "validate": "return code.toLowerCase().includes('<table>') && code.toLowerCase().includes('<tr>') && code.toLowerCase().includes('<td>') && code.toLowerCase().includes('apple') && code.toLowerCase().includes('banana');",
+    "successMsg": "Superb! You've built your first data table."
+  },
+  {
+    "title": "Table Headers",
+    "instruction": "Tables usually have headers to describe the columns. Instead of using <code>&lt;td&gt;</code> for the top row, use <code>&lt;th&gt;</code> (table header)! This makes the text bold and centered by default.<br><br><b>Your Task:</b> Change the <code>&lt;td&gt;</code> tags in the very first row to <code>&lt;th&gt;</code> tags so 'Fruit' and 'Color' become headers.",
+    "initialCode": "<table>\n  <tr>\n    <td>Fruit</td>\n    <td>Color</td>\n  </tr>\n  <tr>\n    <td>Apple</td>\n    <td>Red</td>\n  </tr>\n</table>",
+    "validate": "return code.toLowerCase().includes('<th>fruit</th>') && code.toLowerCase().includes('<th>color</th>');",
+    "successMsg": "Galing! Headers make tables much easier to read."
+  },
+  {
+    "title": "Forms & Text Inputs",
+    "instruction": "To collect user input, we use a <code>&lt;form&gt;</code> tag. Inside it, the <code>&lt;input&gt;</code> tag is a versatile element. Setting its <code>type</code> attribute to <code>\"text\"</code> creates a standard text box.<br><br><b>Example:</b><br><code>&lt;form&gt;<br>&nbsp;&nbsp;Name: &lt;input type=\"text\"&gt;<br>&lt;/form&gt;</code><br><br><b>Your Task:</b> Wrap the username input in a <code>&lt;form&gt;</code> tag, and add an <code>&lt;input type=\"text\"&gt;</code> next to it.",
+    "initialCode": "Username: ",
+    "validate": "return code.toLowerCase().includes('<form>') && code.toLowerCase().includes('type=\"text\"') && code.toLowerCase().includes('</form>');",
+    "successMsg": "Awesome! Now users can type their name."
+  },
+  {
+    "title": "Password & Hidden Inputs",
+    "instruction": "Forms need to keep secrets! <code>&lt;input type=\"password\"&gt;</code> hides the characters you type (like *****). <code>&lt;input type=\"hidden\"&gt;</code> stores data invisibly—users can't see it, but the form sends it behind the scenes.<br><br><b>Your Task:</b> Add a password input next to 'Password:', and add a hidden input anywhere inside the form.",
+    "initialCode": "<form>\n  Username: <input type=\"text\">\n  <br>\n  Password: \n</form>",
+    "validate": "return code.toLowerCase().includes('type=\"password\"') && code.toLowerCase().includes('type=\"hidden\"');",
+    "successMsg": "Very secure! You're mastering form data."
+  },
+  {
+    "title": "Radio Buttons & Checkboxes",
+    "instruction": "Need choices? <code>&lt;input type=\"radio\"&gt;</code> lets users pick only ONE option (like a multiple-choice test). <code>&lt;input type=\"checkbox\"&gt;</code> lets users select MULTIPLE options (like choosing toppings).<br><br><b>Your Task:</b> Add a radio input for 'Yes' and a checkbox input for 'I agree'.",
+    "initialCode": "<form>\n  Do you like coding?\n  Yes: \n  <br>\n  I agree to terms: \n</form>",
+    "validate": "return code.toLowerCase().includes('type=\"radio\"') && code.toLowerCase().includes('type=\"checkbox\"');",
+    "successMsg": "Sana all pinili, 'di ba? *umiyak* Great job!"
+  },
+  {
+    "title": "File Uploads & Image Inputs",
+    "instruction": "You can upload files using <code>&lt;input type=\"file\"&gt;</code>. You can also use an image as a clickable submit button using <code>&lt;input type=\"image\" src=\"url\"&gt;</code>!<br><br><b>Your Task:</b> Add a file input to upload a document. Also, add an image input (use <code>src=\"button.png\"</code> for the source).",
+    "initialCode": "<form>\n  Upload Resume: \n  <br>\n  Submit with picture: \n</form>",
+    "validate": "return code.toLowerCase().includes('type=\"file\"') && code.toLowerCase().includes('type=\"image\"') && code.toLowerCase().includes('src=\"button.png\"');",
+    "successMsg": "Amazing! You can now handle file uploads."
+  },
+  {
+    "title": "Submit, Reset, & Buttons",
+    "instruction": "Finally, we need buttons to interact with the form! <br>1. <code>type=\"submit\"</code> sends the form data.<br>2. <code>type=\"reset\"</code> clears all inputs back to default.<br>3. <code>type=\"button\"</code> is a plain button you can program later with JavaScript.<br><br><b>Your Task:</b> Add all three of these input types inside the form.",
+    "initialCode": "<form>\n  Name: <input type=\"text\">\n  <br>\n  \n</form>",
+    "validate": "return code.toLowerCase().includes('type=\"submit\"') && code.toLowerCase().includes('type=\"reset\"') && code.toLowerCase().includes('type=\"button\"');",
+    "successMsg": "Fantastic! You've learned all the core HTML form inputs!"
   }
 ]

@@ -1,5 +1,3 @@
-const STORAGE_KEY = 'tk-laca-progress-v1';
-
 let levels = [];
 let currentLevel = 0;
 
@@ -51,47 +49,6 @@ function syncLineNumbersScroll() {
     lineNumbers.scrollTop = editor.scrollTop;
 }
 
-function saveProgress() {
-    try {
-        const raw = localStorage.getItem(STORAGE_KEY) || '{}';
-        const data = JSON.parse(raw);
-        data.levels = data.levels || {};
-        data.levels[currentLevel] = editor.value;
-        data.lastLevel = currentLevel;
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    } catch (e) {
-        // ignore storage errors
-    }
-}
-
-let saveTimer = null;
-function scheduleSave() {
-    clearTimeout(saveTimer);
-    saveTimer = setTimeout(saveProgress, 350);
-}
-
-function loadSavedForLevel(index) {
-    try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return null;
-        const data = JSON.parse(raw);
-        return data.levels && data.levels[index] != null ? data.levels[index] : null;
-    } catch (e) {
-        return null;
-    }
-}
-
-function loadLastLevel() {
-    try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return null;
-        const data = JSON.parse(raw);
-        return typeof data.lastLevel === 'number' ? data.lastLevel : null;
-    } catch (e) {
-        return null;
-    }
-}
-
 editor.addEventListener('keydown', function (e) {
     if (e.key === 'Tab') {
         e.preventDefault();
@@ -117,7 +74,7 @@ function highlightHTML(text) {
         .replace(/(&lt;[a-zA-Z0-9-_:.]+)([\s\S]*?)(\/?&gt;)/g, (match, open, attrs, close) => {
             const highlightedAttrs = attrs
                 .replace(/([a-zA-Z-:]+)(=)("[^"]*"|'[^']*')/g, '<span class="attr-name">$1</span>$2<span class="attr-value">$3</span>');
-            return `<span class="tag">${open}</span>${highlightedAttrs}${close}`;
+return `<span class="tag">${open}</span>${highlightedAttrs}<span class="tag">${close}</span>`;
         });
 }
 
@@ -134,7 +91,6 @@ editor.addEventListener('input', () => {
     feedback.innerHTML = 'Keep typing...';
     feedback.className = '';
     updateLineNumbers();
-    scheduleSave();
     syncHighlight();
 });
 
@@ -206,8 +162,7 @@ function loadLevel(index) {
     levelIndicator.innerText = `- Level ${index + 1} of ${levels.length}: ${level.title}`;
     document.getElementById('instructions-content').innerHTML = level.instruction;
 
-    const savedCode = loadSavedForLevel(index);
-    editor.value = savedCode ?? level.initialCode;
+    editor.value = level.initialCode;
     preview.innerHTML = editor.value;
     updateLineNumbers();
 
