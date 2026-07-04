@@ -127,13 +127,9 @@ textarea {
 
 .code-highlight {
     pointer-events: none;
-    color: transparent;
+    color: #111;
     background-color: #fafafa;
     overflow: hidden;
-}
-
-.code-highlight span {
-    color: #000;
 }
 
 .code-highlight .tag {
