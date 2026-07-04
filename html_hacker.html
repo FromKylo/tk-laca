@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Hackers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="mode-overlay">
+        <div id="mode-card">
+            <h2>Choose Mode</h2>
+            <p>Select how you'd like to run the activity:</p>
+            <div id="mode-options">
+                <button onclick="showExamForm()">Exam Mode</button>
+                <button onclick="showSelectorForm()">Level Selector Mode</button>
+            </div>
+
+            <div id="exam-form" style="display:none; margin-top:12px;">
+                <label>Last Name: <input id="last-name" /></label><br>
+                <label>First Name: <input id="first-name" /></label><br>
+                <label>Middle Initial: <input id="middle-initial" maxlength="1" style="width:36px"/></label><br>
+                <div id="mode-actions">
+                    <button onclick="startExamMode()">Start Exam</button>
+                </div>
+            </div>
+
+            <div id="selector-form" style="display:none; margin-top:12px;">
+                <label>Enter password to open the game:</label><br>
+                <input id="overlay-password" type="password" placeholder="Password" />
+                <div id="mode-actions">
+                    <button onclick="startLevelSelectorFromOverlay()">Unlock and Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <h1>HTML Hackers: Intro to HTML <span id="level-indicator">- Level 1 of 14</span></h1>
+        <div id="student-name" style="font-size:14px; margin-top:6px; color:#222;"></div>
+    </header>
+
+    <div class="workspace">
+        <div class="panel">
+            <div class="panel-title">INSTRUCTIONS</div>
+            <div class="instructions" id="instructions">
+                <div class="instr-header" style="display:flex; justify-content:flex-start; align-items:center;">
+                    <div style="font-weight:bold;">Instructions</div>
+                </div>
+                <div id="instructions-content"></div>
+            </div>
+        </div>
+        <div class="splitter" id="splitter-1"></div>
+        <div class="panel">
+            <div class="panel-title">CODE EDITOR</div>
+            <div class="editor-container">
+                <div class="line-numbers" id="line-numbers"></div>
+                <div class="code-editor-wrapper">
+                    <div class="code-highlight" id="code-highlight"></div>
+                    <textarea id="code-editor" spellcheck="false" wrap="off"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="splitter" id="splitter-2"></div>
+        <div class="panel">
+            <div class="panel-title">LIVE PREVIEW</div>
+            <div id="preview"></div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div id="feedback">Type your code to see the live preview!</div>
+        <div class="control-actions">
+            <div class="level-controls">
+                <button id="unlock-level-btn" onclick="unlockLevelSelector()" style="display:none;">Select Level</button>
+                <input id="password-input" type="password" placeholder="Password" style="display:none;" />
+                <select id="level-select" onchange="jumpToLevel(this.value)" style="display:none;"></select>
+            </div>
+            <div class="right-actions">
+                <button id="reset-btn" onclick="resetLevel()" style="display:none;">Reset</button>
+                <div style="display:flex; gap:8px; margin-left:auto;">
+                    <button id="check-btn" onclick="checkAnswer()">Check Code</button>
+                    <button id="next-btn" onclick="nextLevel()">Next Level &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

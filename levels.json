@@ -1,0 +1,107 @@
+[
+  {
+    "title": "Opening and Closing Tags",
+    "instruction": "Almost every HTML element requires both an opening tag and a closing tag. If we forget the closing tag, the formatting 'leaks' and breaks the page.<br><br>Examples of opening tags are <code>&lt;u&gt;</code>, <code>&lt;i&gt;</code>, and <code>&lt;b&gt;</code>.<br><br>Examples of closing tags are <code>&lt;/u&gt;</code>, <code>&lt;/i&gt;</code>, and <code>&lt;/b&gt;</code>.<br><br><b>Example:</b><br><code>&lt;u&gt;Underlined&lt;/u&gt;</code><br><br><b>Your Task:</b> Find the sentence that is incorrectly styled and fix the missing closing tag in the editor.",
+    "initialCode": "<u> Only this sentence should be underlined.\n<i> Only this sentence should be italicized. </i>\n<b> Only this sentence should be in bold text. </b>",
+    "validate": "return code.toLowerCase().includes('</u>') && code.toLowerCase().indexOf('<u>') < code.toLowerCase().indexOf('</u>');",
+    "successMsg": "Wow, ikaw ay isang hackerist! Adding the </u> tag stops the underline from leaking into the next lines."
+  },
+  {
+    "title": "The Main Heading",
+    "instruction": "The <code>&lt;h1&gt;</code> tag is the most important heading on a page.<br><br><b>Example:</b><br><code>&lt;h1&gt;The Main Header&lt;/h1&gt;</code><br><br><b>Your Task:</b> Wrap 'Welcome to my Website' in an <code>&lt;h1&gt;</code> tag.",
+    "initialCode": "Welcome to my Website",
+    "validate": "return code.toLowerCase().includes('<h1>') && code.toLowerCase().includes('</h1>');",
+    "successMsg": "Nays one! The h1 tag makes the text big and bold."
+  },
+  {
+    "title": "Subheadings",
+    "instruction": "Subheadings like <code>&lt;h2&gt;</code> are smaller than h1. They go all the way down to h6.<br><br><b>Example:</b><br><code>&lt;h2&gt;My Pets&lt;/h2&gt;</code><br><br><b>Your Task:</b> On line 2, wrap 'About Me' in an <code>&lt;h2&gt;</code> tag.",
+    "initialCode": "<h1>Welcome to my Website</h1>\nAbout Me",
+    "validate": "return code.toLowerCase().includes('<h2>') && code.toLowerCase().includes('</h2>');",
+    "successMsg": "Ayos! Notice how h2 is slightly smaller than h1."
+  },
+  {
+    "title": "Paragraphs",
+    "instruction": "The <code>&lt;p&gt;</code> tag is used for normal paragraph text.<br><br><b>Example:</b><br><code>&lt;p&gt;This is a sentence.&lt;/p&gt;</code><br><br><b>Your Task:</b> On line 4, wrap 'I am a student learning HTML today.' in a <code>&lt;p&gt;</code> tag.",
+    "initialCode": "<h1>Welcome to my Website</h1>\n<h2>About Me</h2>\n\nI am a student learning HTML today.",
+    "validate": "return code.toLowerCase().includes('<p>') && code.toLowerCase().includes('</p>');",
+    "successMsg": "Perfect! Now you have regular text."
+  },
+  {
+    "title": "Bold Text",
+    "instruction": "The <code>&lt;strong&gt;</code> tag makes text bold and important.<br><br><b>Example:</b><br><p><code>Read this: &lt;strong&gt;Important!&lt;/strong&gt; — pay attention.</code></p><br><b>Your Task:</b> Inside your paragraph, wrap the word 'HTML' in a <code>&lt;strong&gt;</code> tag. Note that ONLY the word requires the tag, not the whole sentence!",
+    "initialCode": "<h1>Welcome to my Website</h1>\n<h2>About Me</h2>\n<p>I am a student learning HTML today.</p>",
+    "validate": "return code.toLowerCase().includes('<strong>') && code.toLowerCase().includes('</strong>');",
+    "successMsg": "Awesome! The word stands out now."
+  },
+  {
+    "title": "Hyperlinks",
+    "instruction": "The <code>&lt;a&gt;</code> tag makes a clickable link. You must include the <code>href</code> (hyperlink reference) attribute to tell it where to go.<br><br><b>Example:</b><br><code>&lt;a href=\"https://bing.com\"&gt;Bing&lt;/a&gt;</code><br><br><b>Your Task:</b> Complete the link by filling in the URL and closing tag. Point the link to 'https://google.com'.",
+    "initialCode": "<h1>Welcome to my Website</h1>\n<h2>About Me</h2>\n<p>I am a student learning <strong>HTML</strong> today.</p>\n\n<a href=\"____\">Search on Google</a>",
+    "validate": "return code.toLowerCase().includes('<a ') && code.toLowerCase().includes('href=') && code.toLowerCase().includes('</a>');",
+    "successMsg": "Excellent! You created a hyperlink."
+  },
+  {
+    "title": "Putting It All Together",
+    "instruction": "Great job so far! Now, build a simple page layout using what you've learned. It needs a main title <code>&lt;h1&gt;</code> with your name, a sub header <code>&lt;h2&gt;</code> with your section, and a single sentence in a paragraph tag <code>&lt;p&gt;</code> of your favorite motto, quote, or bible verse.",
+    "initialCode": "",
+    "validate": "return code.toLowerCase().includes('<h1>') && code.toLowerCase().includes('</h1>') && code.toLowerCase().includes('<h2>') && code.toLowerCase().includes('</h2>') && code.toLowerCase().includes('<p>') && code.toLowerCase().includes('</p>');",
+    "successMsg": "Excellent! You have mastered the basics of page structure."
+  },
+  {
+    "title": "Bullet Lists",
+    "instruction": "To make a list, use the <code>&lt;ul&gt;</code> (unordered list) tag. Inside, each item must be wrapped in an <code>&lt;li&gt;</code> (list item) tag.<br><br><b>Example:</b><br><code>&lt;ul&gt;\n  &lt;li&gt;Apple&lt;/li&gt;&lt;li&gt;Banana&lt;/li&gt;\n&lt;/ul&gt;</code><br><br><b>Your Task:</b> Create a list with two items: 'HTML' and 'CSS'.",
+    "initialCode": "<h1>My Skills</h1>\n<ul>\n</ul>",
+    "validate": "return code.toLowerCase().includes('<ul>') && code.toLowerCase().includes('</ul>') && (code.toLowerCase().match(/<li>/g) || []).length >= 2;",
+    "successMsg": "Great! You created a list structure."
+  },
+  {
+    "title": "The HTML Tag",
+    "instruction": "The <code>&lt;html&gt;</code> element is the top-level wrapper for your whole document — it must contain the <code>&lt;head&gt;</code> (metadata) and the <code>&lt;body&gt;</code> (visible content). The correct order matters: put the DOCTYPE first, then open <code>&lt;html&gt;</code>, then <code>&lt;head&gt;</code>, then <code>&lt;body&gt;</code>, and finally close <code>&lt;/html&gt;</code>.<br><br><b>Minimal example:</b><br><code>&lt;!DOCTYPE html&gt;&lt;br&gt;&lt;html lang=&quot;en&quot;&gt;&lt;br&gt;&nbsp;&nbsp;&lt;head&gt;...&lt;/head&gt;&lt;br&gt;&nbsp;&nbsp;&lt;body&gt;...&lt;/body&gt;&lt;br&gt;&lt;/html&gt;</code><br><br><b>Your Task:</b> Wrap your existing <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections inside a single <code>&lt;html&gt;</code> tag and ensure the document begins with <code>&lt;!DOCTYPE html&gt;</code>.",
+    "initialCode": "<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n</body>",
+    "validate": "return code.toLowerCase().includes('<html>') && code.toLowerCase().includes('</html>') && code.toLowerCase().indexOf('<html>') < code.toLowerCase().indexOf('<head>');",
+    "successMsg": "Almost done! You've structured the entire page."
+  },
+  {
+    "title": "The Head Tag",
+    "instruction": "The <code>&lt;head&gt;</code> tag holds invisible information about your page that the browser needs, like the page <code>&lt;title&gt;</code> (which shows in the browser tab). Nothing inside the head tag appears in the preview.<br><br><b>WHERE TO PUT IT:</b> The head tag goes <u>BEFORE</u> the body tag, and it also goes <u>INSIDE</u> the html tag.<br><br><b>Example:</b><br><code>&lt;html&gt;</code><br><code>&nbsp;&nbsp;&lt;head&gt;</code><br><code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My Page&lt;/title&gt;</code><br><code>&nbsp;&nbsp;&lt;/head&gt;</code><br><code>&nbsp;&nbsp;&lt;body&gt;...&lt;/body&gt;</code><br><code>&lt;/html&gt;</code><br><br><b>Your Task:</b> Above your body tag, add a <code>&lt;head&gt;</code> tag containing a <code>&lt;title&gt;</code> with your site's name.",
+    "initialCode": "<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n</body>",
+    "validate": "return code.toLowerCase().includes('<head>') && code.toLowerCase().includes('</head>') && code.toLowerCase().includes('<title>') && code.toLowerCase().indexOf('</head>') < code.toLowerCase().indexOf('<body>');",
+    "successMsg": "Good job! The title won't show in the preview, but it will show on a real browser tab."
+  },
+  {
+    "title": "The Body Tag",
+    "instruction": "All visible content on a webpage must be wrapped inside a <code>&lt;body&gt;</code> tag. The body tag contains everything the user sees on the page (headings, paragraphs, images, links, etc.).<br><br><b>WHERE TO PUT IT:</b> The opening <code>&lt;body&gt;</code> tag comes <u>AFTER</u> the closing <code>&lt;/head&gt;</code> tag.<br><br><b>Example:</b><br><code>&lt;html&gt;</code><br><code>&nbsp;&nbsp;&lt;head&gt;...&lt;/head&gt;</code><br><code>&nbsp;&nbsp;&lt;body&gt;</code><br><code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hi&lt;/h1&gt;</code><br><code>&nbsp;&nbsp;&lt;/body&gt;</code><br><code>&lt;/html&gt;</code><br><br><b>Your Task:</b> Wrap ALL of your current code inside an opening <code>&lt;body&gt;</code> and closing <code>&lt;/body&gt;</code> tag.",
+    "initialCode": "<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n</body>",
+    "validate": "return code.toLowerCase().includes('<body>') && code.toLowerCase().includes('</body>') && code.toLowerCase().indexOf('<body>') < code.toLowerCase().indexOf('<h1>');",
+    "successMsg": "Great! Your content is now safely inside the body."
+  },
+  {
+    "title": "Document Type",
+    "instruction": "The very first line of every webpage must be <code>&lt;!DOCTYPE html&gt;</code> to tell the browser it's using HTML5.<br><br><b>Example:</b><br><code>&lt;!DOCTYPE html&gt;</code><br><br><b>Your Task:</b> Add the DOCTYPE declaration at the very top of your document.",
+    "initialCode": "<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n</body>\n</html>",
+    "validate": "return code.toLowerCase().includes('<!doctype html>') && code.toLowerCase().indexOf('<!doctype html>') < code.toLowerCase().indexOf('<html>');",
+    "successMsg": "Congratulations! You built a structurally perfect HTML document!"
+  },
+  {
+    "title": "Styling with CSS",
+    "instruction": "You can change how things look using the <code>style</code> attribute inside your HTML tags.<br><br><b>Example:</b><br><code>&lt;h1 style=\"color: blue; background-color: yellow;\"&gt;Hello&lt;/h1&gt;</code><br><br><b>Your Task:</b> Change the color of this heading to 'blue' and the background-color to 'yellow'.",
+    "initialCode": "<h1>Hello World!</h1>",
+    "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('color: blue') && code.toLowerCase().includes('background-color: yellow');",
+    "successMsg": "Nice! You just used Inline CSS to style your element."
+  },
+  {
+    "title": "Multiple CSS Properties",
+    "instruction": "You can use multiple CSS properties together by separating them with semicolons.<br><br><b>Example:</b><br><code>&lt;p style=\"color: red; text-align: center;\"&gt;Centered Red Text&lt;/p&gt;</code><br><br>The <code>text-align</code> property can have values like 'left', 'center', 'right'.<br><br><b>Your Task:</b> Add both the <code>color</code> and <code>text-align</code> properties to the style attribute of the heading.",
+    "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1 style=\"background-color: yellow;\">Hello World!</h1>\n</body>\n</html>",
+    "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('color') && code.toLowerCase().includes('text-align');",
+    "successMsg": "Excellent! You combined multiple CSS properties."
+  },
+  {
+    "title": "Background Color",
+    "instruction": "The <code>background-color</code> property changes the background color of an element. You can combine it with other properties like <code>color</code> to style your text and its background together.<br><br><b>Example:</b><br><code>&lt;h2 style=\"color: white; background-color: navy;\"&gt;Dark Header&lt;/h2&gt;</code><br><br><b>Your Task:</b> Add the <code>background-color</code> property to the style attribute of the heading.",
+    "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1 style=\"color: blue; text-align: center;\">Hello World!</h1>\n</body>\n</html>",
+    "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('background-color');",
+    "successMsg": "Great! You added background-color to your styling toolkit."
+  }
+]

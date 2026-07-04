@@ -1,0 +1,291 @@
+body {
+    color: #000000;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+header {
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#level-indicator {
+    font-weight: normal;
+    font-size: 16px;
+    color: #555;
+}
+
+.instructions {
+    background-color: #f7f7f7;
+    border: none;
+    padding: 15px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    flex: 1 1 0;
+    overflow: auto;
+    min-height: 0;
+}
+
+.instructions code {
+    background-color: #e0e0e0;
+    padding: 2px 5px;
+    font-family: monospace;
+}
+
+.workspace {
+    display: flex;
+    gap: 0;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.panel {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #000;
+    min-width: 180px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.splitter {
+    width: 10px;
+    cursor: col-resize;
+    background: #000;
+    opacity: 0.15;
+    flex: 0 0 10px;
+    transition: opacity 0.2s ease;
+}
+
+.splitter:hover,
+.splitter.active {
+    opacity: 0.45;
+}
+
+body.dragging {
+    user-select: none;
+}
+
+.editor-container {
+    display: flex;
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.line-numbers {
+    width: 44px;
+    background: #f2f2f2;
+    color: #555;
+    padding: 15px 8px;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    user-select: none;
+    overflow: hidden;
+}
+
+.code-editor-wrapper {
+    position: relative;
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+    background-color: #fafafa;
+}
+
+.code-highlight,
+textarea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre;
+    overflow-wrap: normal;
+}
+
+.code-highlight {
+    pointer-events: none;
+    color: transparent;
+    background-color: #fafafa;
+    overflow: hidden;
+}
+
+.code-highlight span {
+    color: #000;
+}
+
+.code-highlight .tag {
+    color: #d73a49;
+}
+
+.code-highlight .attr-name {
+    color: #6f42c1;
+}
+
+.code-highlight .attr-value {
+    color: #032f62;
+}
+
+.code-highlight .comment {
+    color: #6a737d;
+}
+
+textarea {
+    border: none;
+    resize: none;
+    outline: none;
+    background: transparent;
+    color: #000;
+    overflow: auto;
+}
+
+#preview {
+    flex: 1 1 0;
+    padding: 15px;
+    overflow-y: auto;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.panel-title {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #000;
+    padding-top: 15px;
+    gap: 15px;
+}
+
+.control-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.level-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.right-actions { margin-left: auto; display:flex; gap:8px; align-items:center; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+#level-select {
+    border: 2px solid #000;
+    padding: 9px 10px;
+    font-size: 14px;
+    min-width: 220px;
+}
+
+#password-input {
+    border: 2px solid #000;
+    padding: 9px 10px;
+    font-size: 14px;
+    min-width: 160px;
+}
+
+#feedback {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.feedback-success { color: #008000; }
+.feedback-error { color: #cc0000; }
+
+button {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+#next-btn {
+    display: none;
+    background-color: #fff;
+    color: #000;
+}
+#next-btn:hover {
+    background-color: #f0f0f0;
+}
+/* Mode overlay */
+#mode-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+#mode-card {
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    border: 3px solid #000;
+    width: 420px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+}
+#mode-card h2 { margin-top: 0; }
+#mode-actions { display:flex; gap:10px; margin-top:10px; }
+
+/* blinking cue for the editor (first level) */
+@keyframes editor-blink {
+    0% { box-shadow: 0 0 0 0 rgba(255,200,0,0.0); }
+    50% { box-shadow: 0 0 8px 4px rgba(255,200,0,0.55); }
+    100% { box-shadow: 0 0 0 0 rgba(255,200,0,0.0); }
+}
+.blink {
+    animation: editor-blink 1s ease-in-out infinite;
+}
+/* Collapsible instructions */
+.instructions { max-height: none; transition: max-height 0.25s ease; }
+.instructions.collapsed { max-height: 44px; overflow: hidden; }
+/* Disable text selection in preview and instructions to reduce easy copy-paste */
+#preview, #instructions-content {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
