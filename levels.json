@@ -49,20 +49,6 @@
     "successMsg": "Excellent! You have mastered the basics of page structure."
   },
   {
-    "title": "Italics",
-    "instruction": "The <code>&lt;em&gt;</code> tag makes text italic for emphasis.<br><br><b>Example:</b><br><code>&lt;em&gt;Important&lt;/em&gt;</code><br><br><b>Your Task:</b> Wrap the word 'carefully' in an <code>&lt;em&gt;</code> tag.",
-    "initialCode": "Read this sentence carefully.",
-    "validate": "return code.toLowerCase().includes('<em>') && code.toLowerCase().includes('</em>');",
-    "successMsg": "Great job! Emphasis makes the text stand out."
-  },
-  {
-    "title": "Horizontal Rules",
-    "instruction": "The <code>&lt;hr&gt;</code> tag creates a horizontal line that separates sections of a page.<br><br><b>Example:</b><br><code>&lt;hr&gt;</code><br><br><b>Your Task:</b> Insert a horizontal rule below the heading.",
-    "initialCode": "<h1>My Website</h1>",
-    "validate": "return code.toLowerCase().includes('<hr>');",
-    "successMsg": "Perfect! The horizontal rule adds a clear divider."
-  },
-  {
     "title": "Ordered Lists",
     "instruction": "Use the <code>&lt;ol&gt;</code> tag for numbered lists. Each item goes inside an <code>&lt;li&gt;</code> tag.<br><br><b>Example:</b><br><code>&lt;ol&gt;\n  &lt;li&gt;First&lt;/li&gt;\n  &lt;li&gt;Second&lt;/li&gt;\n&lt;/ol&gt;</code><br><br><b>Your Task:</b> Create a numbered list with two items: 'First' and 'Second'.",
     "initialCode": "<p>My top priorities:</p>",
@@ -131,6 +117,20 @@
     "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1 style=\"background-color: yellow;\">Hello World!</h1>\n</body>\n</html>",
     "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('color: blue') && code.toLowerCase().includes('text-align: center') && code.toLowerCase().includes('background-color: yellow');",
     "successMsg": "Excellent! You combined multiple CSS properties."
+  },
+  {
+    "title": "Text Alignment",
+    "instruction": "The <code>text-align</code> property controls where text appears horizontally on the page.<br><br><b>Example:</b><br><code>&lt;p style=\"text-align: center;\"&gt;Hello&lt;/p&gt;</code><br><br><b>Your Task:</b> Add a <code>text-align: center</code> style to the paragraph so it appears centered.",
+    "initialCode": "<p>Hello World!</p>",
+    "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('text-align: center');",
+    "successMsg": "Great! Your text is now centered."
+  },
+  {
+    "title": "Font Size and Family",
+    "instruction": "Use <code>font-size</code> to change how big text looks and <code>font-family</code> to change the type of font.<br><br><b>Example:</b><br><code>&lt;h2 style=\"font-size: 24px; font-family: serif;\"&gt;Title&lt;/h2&gt;</code><br><br><b>Your Task:</b> Make the heading larger with <code>font-size: 24px</code> and change the font to <code>serif</code>.",
+    "initialCode": "<h2>Welcome!</h2>",
+    "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('font-size: 24px') && code.toLowerCase().includes('font-family: serif');",
+    "successMsg": "Awesome! You changed both the size and style of the font."
   },
   {
     "title": "Background Color",
