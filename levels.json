@@ -64,9 +64,9 @@
   },
   {
     "title": "Images",
-    "instruction": "The <code>&lt;img&gt;</code> tag inserts an image. It uses the <code>src</code> attribute for the image file and the <code>alt</code> attribute for a short description.<br><br><b>Example:</b><br><code>&lt;img src=\"photo.png\" alt=\"A sunset\"&gt;</code><br><br><b>Your Task:</b> Add an image tag with the source <code>sunset.png</code> and alt text <code>Sunset</code>.",
+    "instruction": "The <code>&lt;img&gt;</code> tag inserts an image. It uses the <code>src</code> attribute for the image file and the <code>alt</code> attribute for a short description. This is one of the few tags that does not need a closing tag.<br><br><b>Example:</b><br><code>&lt;img src=\"photo.png\" alt=\"A sunset\"&gt;</code><br><br><b>Your Task:</b> Add an image tag with the source <code>logo.png</code> and alt text <code>A logo.</code>.",
     "initialCode": "<p>Here is a picture:</p>",
-    "validate": "return code.toLowerCase().includes('<img') && code.toLowerCase().includes('src=') && code.toLowerCase().includes('alt=') && code.toLowerCase().includes('sunset.png');",
+    "validate": "return code.toLowerCase().includes('<img') && code.toLowerCase().includes('src=') && code.toLowerCase().includes('alt=') && code.toLowerCase().includes('logo.png') && code.toLowerCase().includes('a logo.');",
     "successMsg": "Excellent! Images make a page more interesting."
   },
   {
@@ -99,7 +99,7 @@
   },
   {
     "title": "Document Type",
-    "instruction": "The page structure is already complete, so only the very first line is missing. Add the <code>&lt;!DOCTYPE html&gt;</code> declaration at the top of the document so the browser knows it's reading an HTML5 page.<br><br><b>Your Task:</b> Add the DOCTYPE declaration at the very top of your document.",
+    "instruction": "The page structure is already complete, so only the very first line is missing. Add the <code>&lt;!DOCTYPE html&gt;</code> declaration at the top of the document so the browser knows it's reading an HTML5 page. Like <code>&lt;img&gt;</code>, this is one of the few tags that does not need a closing tag.<br><br><b>Your Task:</b> Add the DOCTYPE declaration at the very top of your document.",
     "initialCode": "<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n</body>\n</html>",
     "validate": "return code.toLowerCase().includes('<!doctype html>') && code.toLowerCase().indexOf('<!doctype html>') < code.toLowerCase().indexOf('<html>');",
     "successMsg": "Congratulations! You built a structurally perfect HTML document!"
