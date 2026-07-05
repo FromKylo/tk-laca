@@ -286,3 +286,134 @@ button:hover {
     -ms-user-select: none;
     user-select: none;
 }
+
+body {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+header {
+    border-bottom-color: #334155;
+}
+
+header h1 {
+    color: #f8fafc;
+}
+
+#level-indicator {
+    color: #cbd5e1;
+}
+
+.instructions {
+    background: #111827;
+    color: #f8fafc;
+    border: 1px solid #334155;
+}
+
+.instructions code {
+    background: #334155;
+    color: #fbbf24;
+}
+
+.panel {
+    background: #111827;
+    border-color: #334155;
+}
+
+.panel-title {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+.line-numbers {
+    background: #1f2937;
+    color: #94a3b8;
+}
+
+.code-editor-wrapper {
+    background: #111827;
+}
+
+.code-highlight {
+    color: #f8fafc;
+    background: #111827;
+}
+
+.code-highlight .tag {
+    color: #60a5fa;
+}
+
+.code-highlight .attr-name {
+    color: #c084fc;
+}
+
+.code-highlight .attr-value {
+    color: #93c5fd;
+}
+
+.code-highlight .comment {
+    color: #94a3b8;
+}
+
+textarea {
+    caret-color: #f8fafc;
+}
+
+#preview {
+    background: #ffffff;
+    color: #111111;
+}
+
+#feedback {
+    color: #f8fafc;
+}
+
+#level-select,
+#password-input {
+    background: #111827;
+    color: #f8fafc;
+    border-color: #64748b;
+}
+
+button {
+    background: #2563eb;
+    color: #ffffff;
+    border-color: #60a5fa;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+#next-btn {
+    background: #f8fafc;
+    color: #111827;
+    border-color: #f8fafc;
+}
+
+#next-btn:hover {
+    background: #e2e8f0;
+}
+
+#mode-card {
+    background: #111827;
+    color: #f8fafc;
+    border-color: #334155;
+}
+
+#mode-card input {
+    background: #0f172a;
+    color: #f8fafc;
+    border-color: #64748b;
+}
+
+#preview table {
+    border-collapse: collapse;
+    margin: 8px 0;
+}
+
+#preview th,
+#preview td {
+    border: 1px solid #111111;
+    padding: 6px 10px;
+}

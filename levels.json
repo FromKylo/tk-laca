@@ -85,23 +85,23 @@
   },
   {
     "title": "Styling with CSS",
-    "instruction": "You can change how things look using the <code>style</code> attribute inside your HTML tags.<br><br><b>Example:</b><br><code>&lt;h1 style=\"color: blue; background-color: yellow;\"&gt;Hello&lt;/h1&gt;</code><br><br><b>Your Task:</b> Change the color of this heading to 'blue' and the background-color to 'yellow'.",
+    "instruction": "You can change how things look using the <code>style</code> attribute inside your HTML tags.<br><br><b>Example:</b><br><code>&lt;h1 style=\"color: blue;\"&gt;Hello&lt;/h1&gt;</code><br><br><b>Your Task:</b> Add one CSS style to this heading so the text color becomes 'blue'.",
     "initialCode": "<h1>Hello World!</h1>",
-    "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('color: blue') && code.toLowerCase().includes('background-color: yellow');",
+    "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('color: blue');",
     "successMsg": "Nice! You just used Inline CSS to style your element."
   },
   {
     "title": "Multiple CSS Properties",
-    "instruction": "You can use multiple CSS properties together by separating them with semicolons.<br><br><b>Example:</b><br><code>&lt;p style=\"color: red; text-align: center;\"&gt;Centered Red Text&lt;/p&gt;</code><br><br>The <code>text-align</code> property can have values like 'left', 'center', 'right'.<br><br><b>Your Task:</b> Add both the <code>color</code> and <code>text-align</code> properties to the style attribute of the heading.",
+    "instruction": "You can add more than one CSS property to the same style attribute by separating them with semicolons.<br><br><b>Example:</b><br><code>&lt;h1 style=\"color: red; text-align: center;\"&gt;Hello&lt;/h1&gt;</code><br><br><b>Your Task:</b> Keep the existing background color and add two new properties to the heading: <code>color: blue</code> and <code>text-align: center</code>.",
     "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1 style=\"background-color: yellow;\">Hello World!</h1>\n</body>\n</html>",
-    "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('color') && code.toLowerCase().includes('text-align');",
+    "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('color: blue') && code.toLowerCase().includes('text-align: center') && code.toLowerCase().includes('background-color: yellow');",
     "successMsg": "Excellent! You combined multiple CSS properties."
   },
   {
     "title": "Background Color",
-    "instruction": "The <code>background-color</code> property changes the background color of an element. You can combine it with other properties like <code>color</code> to style your text and its background together.<br><br><b>Example:</b><br><code>&lt;h2 style=\"color: white; background-color: navy;\"&gt;Dark Header&lt;/h2&gt;</code><br><br><b>Your Task:</b> Add the <code>background-color</code> property to the style attribute of the heading.",
+    "instruction": "The <code>background-color</code> property changes the background color of an element. Apply it to the whole page so the website has a colored background instead of the default white look.<br><br><b>Example:</b><br><code>&lt;body style=\"background-color: lightblue;\"&gt;...&lt;/body&gt;</code><br><br><b>Your Task:</b> Add a <code>background-color</code> style to the <code>&lt;body&gt;</code> tag.",
     "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1 style=\"color: blue; text-align: center;\">Hello World!</h1>\n</body>\n</html>",
-    "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('background-color');",
+    "validate": "return code.toLowerCase().includes('<body') && code.toLowerCase().includes('background-color') && code.toLowerCase().includes('style=')",
     "successMsg": "Great! You added background-color to your styling toolkit."
   },
   {
@@ -114,15 +114,15 @@
   {
     "title": "CSS Classes",
     "instruction": "What if you only want to style <i>some</i> elements? Use a <b>CSS Class</b>! In your CSS, start a class name with a period (like <code>.highlight</code>). Then, add <code>class=\"highlight\"</code> to your HTML tags.<br><br><b>Example:</b><br><code>.special { color: orange; }</code><br><code>&lt;p class=\"special\"&gt;Text&lt;/p&gt;</code><br><br><b>Your Task:</b> Create a class named <code>.blue-text</code> inside the <code>&lt;style&gt;</code> tag that changes the color to blue. Then, add <code>class=\"blue-text\"</code> to the second paragraph.",
-    "initialCode": "<html>\n<head>\n  <style>\n    \n  </style>\n</head>\n<body>\n  <p>Normal text.</p>\n  <p>Make me blue!</p>\n</body>\n</html>",
+    "initialCode": "<html>\n<head>\n  <style>\n    \n  </style>\n</head>\n<body>\n  <p>Normal text.</p>\n  <p class=\"blue-text\">Make me blue!</p>\n</body>\n</html>",
     "validate": "return code.toLowerCase().includes('.blue-text') && code.toLowerCase().includes('color') && code.toLowerCase().includes('blue') && code.toLowerCase().includes('class=\"blue-text\"');",
     "successMsg": "Nice one! Classes are reusable styles you can apply anywhere."
   },
   {
     "title": "CSS IDs",
-    "instruction": "While classes can be used on many elements, an <b>ID</b> is for a single, unique element on the page. In CSS, IDs start with a hashtag (like <code>#main</code>). In HTML, you use <code>id=\"main\"</code>.<br><br><b>Example:</b><br><code>#header { text-align: center; }</code><br><code>&lt;h1 id=\"header\"&gt;Title&lt;/h1&gt;</code><br><br><b>Your Task:</b> Create an ID named <code>#hero</code> in the style tag that makes the text-align 'center'. Then, add that id to the <code>&lt;h1&gt;</code> tag.",
-    "initialCode": "<html>\n<head>\n  <style>\n    \n  </style>\n</head>\n<body>\n  <h1>Welcome!</h1>\n</body>\n</html>",
-    "validate": "return code.toLowerCase().includes('#hero') && code.toLowerCase().includes('text-align') && code.toLowerCase().includes('center') && code.toLowerCase().includes('id=\"hero\"');",
+    "instruction": "While classes can be used on many elements, an <b>ID</b> is for a single, unique element on the page. In CSS, IDs start with a hashtag (like <code>#main</code>). In HTML, you use <code>id=\"main\"</code>.<br><br><b>Example:</b><br><code>#header { text-align: center; }</code><br><code>&lt;h1 id=\"header\"&gt;Title&lt;/h1&gt;</code><br><br><b>Your Task:</b> Create an ID named <code>#hero</code> in the style tag that makes the text-align 'center'. Then, add <code>id=\"here\"</code> to the <code>&lt;h1&gt;</code> tag.",
+    "initialCode": "<html>\n<head>\n  <style>\n    \n  </style>\n</head>\n<body>\n  <h1 id=\"here\">Welcome!</h1>\n</body>\n</html>",
+    "validate": "return code.toLowerCase().includes('#hero') && code.toLowerCase().includes('text-align') && code.toLowerCase().includes('center') && code.toLowerCase().includes('id=\"here\"');",
     "successMsg": "Astig! IDs are perfect for unique sections of your website."
   },
   {

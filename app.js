@@ -12,6 +12,12 @@ const unlockLevelBtn = document.getElementById('unlock-level-btn');
 const levelSelect = document.getElementById('level-select');
 const passwordInput = document.getElementById('password-input');
 
+editor.setAttribute('autocomplete', 'off');
+editor.setAttribute('autocapitalize', 'off');
+editor.setAttribute('autocorrect', 'off');
+editor.setAttribute('spellcheck', 'false');
+editor.setAttribute('data-gramm', 'false');
+
 function normalizeLevels(rawLevels) {
     if (!Array.isArray(rawLevels)) return [];
 
@@ -54,8 +60,8 @@ editor.addEventListener('keydown', function (e) {
         e.preventDefault();
         const start = this.selectionStart;
         const end = this.selectionEnd;
-        this.value = this.value.substring(0, start) + '\t' + this.value.substring(end);
-        this.selectionStart = this.selectionEnd = start + 1;
+        this.value = this.value.substring(0, start) + '  ' + this.value.substring(end);
+        this.selectionStart = this.selectionEnd = start + 2;
         preview.innerHTML = this.value;
         feedback.innerHTML = 'Keep typing...';
         feedback.className = '';
@@ -80,7 +86,7 @@ return `<span class="tag">${open}</span>${highlightedAttrs}<span class="tag">${c
 
 function syncHighlight() {
     const highlight = document.getElementById('code-highlight');
-    const value = editor.value.replace(/\t/g, '    ');
+    const value = editor.value.replace(/\t/g, '  ');
     highlight.innerHTML = highlightHTML(value) + '\n';
     highlight.scrollTop = editor.scrollTop;
     highlight.scrollLeft = editor.scrollLeft;
@@ -144,10 +150,7 @@ function loadLevel(index) {
     if (index >= levels.length) {
         document.getElementById('instructions-content').innerHTML = `
             <strong>🏆You beat the game!</strong><br><br>
-            Now, personalize your website:<br>
-            1. Change the headings to your real name.<br>
-            2. Write a short bio about yourself in the paragraph.<br>
-            3. Change the link to your favorite website.<br><br>
+            Now, personalize your own website, either here or on Notepad++<br>
             <strong>🚨 When you are completely finished, call Sir Gelo to check your work!</strong>
         `;
         checkBtn.style.display = 'none';
