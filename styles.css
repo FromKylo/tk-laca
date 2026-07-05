@@ -221,8 +221,29 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
     font-size: 16px;
 }
 
-.feedback-success { color: #008000; }
-.feedback-error { color: #cc0000; }
+#student-name {
+    font-size: 14px;
+    margin-top: 6px;
+    color: #ffffff;
+}
+
+.feedback-success {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #16a34a;
+    color: #ffffff;
+    border: 1px solid #15803d;
+}
+
+.feedback-error {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #dc2626;
+    color: #ffffff;
+    border: 1px solid #b91c1c;
+}
 
 button {
     background-color: #000;

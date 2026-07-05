@@ -35,11 +35,11 @@
     "successMsg": "Awesome! The word stands out now."
   },
   {
-    "title": "Hyperlinks",
-    "instruction": "The <code>&lt;a&gt;</code> tag makes a clickable link. You must include the <code>href</code> (hyperlink reference) attribute to tell it where to go.<br><br><b>Example:</b><br><code>&lt;a href=\"https://bing.com\"&gt;Bing&lt;/a&gt;</code><br><br><b>Your Task:</b> Complete the link by filling in the URL and closing tag. Point the link to 'https://google.com'.",
-    "initialCode": "<h1>Welcome to my Website</h1>\n<h2>About Me</h2>\n<p>I am a student learning <strong>HTML</strong> today.</p>\n\n<a href=\"____\">Search on Google</a>",
-    "validate": "return code.toLowerCase().includes('<a ') && code.toLowerCase().includes('href=') && code.toLowerCase().includes('</a>');",
-    "successMsg": "Excellent! You created a hyperlink."
+    "title": "Line Breaks",
+    "instruction": "Use the <code>&lt;br&gt;</code> tag when you want to start a new line without creating a new paragraph.<br><br><b>Example:</b><br><code>First line&lt;br&gt;Second line</code><br><br><b>Your Task:</b> Put a line break between 'Hello' and 'World'.",
+    "initialCode": "Hello World",
+    "validate": "return code.toLowerCase().includes('<br>');",
+    "successMsg": "Nice! The line break moved the text to a new line."
   },
   {
     "title": "Putting It All Together",
@@ -47,6 +47,41 @@
     "initialCode": "",
     "validate": "return code.toLowerCase().includes('<h1>') && code.toLowerCase().includes('</h1>') && code.toLowerCase().includes('<h2>') && code.toLowerCase().includes('</h2>') && code.toLowerCase().includes('<p>') && code.toLowerCase().includes('</p>');",
     "successMsg": "Excellent! You have mastered the basics of page structure."
+  },
+  {
+    "title": "Italics",
+    "instruction": "The <code>&lt;em&gt;</code> tag makes text italic for emphasis.<br><br><b>Example:</b><br><code>&lt;em&gt;Important&lt;/em&gt;</code><br><br><b>Your Task:</b> Wrap the word 'carefully' in an <code>&lt;em&gt;</code> tag.",
+    "initialCode": "Read this sentence carefully.",
+    "validate": "return code.toLowerCase().includes('<em>') && code.toLowerCase().includes('</em>');",
+    "successMsg": "Great job! Emphasis makes the text stand out."
+  },
+  {
+    "title": "Horizontal Rules",
+    "instruction": "The <code>&lt;hr&gt;</code> tag creates a horizontal line that separates sections of a page.<br><br><b>Example:</b><br><code>&lt;hr&gt;</code><br><br><b>Your Task:</b> Insert a horizontal rule below the heading.",
+    "initialCode": "<h1>My Website</h1>",
+    "validate": "return code.toLowerCase().includes('<hr>');",
+    "successMsg": "Perfect! The horizontal rule adds a clear divider."
+  },
+  {
+    "title": "Ordered Lists",
+    "instruction": "Use the <code>&lt;ol&gt;</code> tag for numbered lists. Each item goes inside an <code>&lt;li&gt;</code> tag.<br><br><b>Example:</b><br><code>&lt;ol&gt;\n  &lt;li&gt;First&lt;/li&gt;\n  &lt;li&gt;Second&lt;/li&gt;\n&lt;/ol&gt;</code><br><br><b>Your Task:</b> Create a numbered list with two items: 'First' and 'Second'.",
+    "initialCode": "<p>My top priorities:</p>",
+    "validate": "return code.toLowerCase().includes('<ol>') && code.toLowerCase().includes('</ol>') && (code.toLowerCase().match(/<li>/g) || []).length >= 2;",
+    "successMsg": "Amazing! Numbered lists help organize steps."
+  },
+  {
+    "title": "Hyperlinks",
+    "instruction": "The <code>&lt;a&gt;</code> tag makes a clickable link. You must include the <code>href</code> (hyperlink reference) attribute to tell it where to go.<br><br><b>Example:</b><br><code>&lt;a href=\"https://bing.com\"&gt;Bing&lt;/a&gt;</code><br><br><b>Your Task:</b> Complete the link by filling in the URL and closing tag. Point the link to 'https://google.com'.",
+    "initialCode": "<h1>Welcome to my Website</h1>\n<h2>About Me</h2>\n<p>I am a student learning <strong>HTML</strong> today.</p>\n\n<a href=\"____\">Search on Google</a>",
+    "validate": "return code.toLowerCase().includes('<a ') && code.toLowerCase().includes('href=') && code.toLowerCase().includes('</a>');",
+    "successMsg": "Excellent! You created a hyperlink."
+  },
+  {
+    "title": "Images",
+    "instruction": "The <code>&lt;img&gt;</code> tag inserts an image. It uses the <code>src</code> attribute for the image file and the <code>alt</code> attribute for a short description.<br><br><b>Example:</b><br><code>&lt;img src=\"photo.png\" alt=\"A sunset\"&gt;</code><br><br><b>Your Task:</b> Add an image tag with the source <code>sunset.png</code> and alt text <code>Sunset</code>.",
+    "initialCode": "<p>Here is a picture:</p>",
+    "validate": "return code.toLowerCase().includes('<img') && code.toLowerCase().includes('src=') && code.toLowerCase().includes('alt=') && code.toLowerCase().includes('sunset.png');",
+    "successMsg": "Excellent! Images make a page more interesting."
   },
   {
     "title": "Bullet Lists",
