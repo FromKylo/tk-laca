@@ -66,7 +66,7 @@
     "title": "Images",
     "instruction": "The <code>&lt;img&gt;</code> tag inserts an image. It uses the <code>src</code> attribute for the image file and the <code>alt</code> attribute for a short description. This is one of the few tags that does not need a closing tag.<br><br><b>Example:</b><br><code>&lt;img src=\"photo.png\" alt=\"A sunset\"&gt;</code><br><br><b>Your Task:</b> Add an image tag with the source <code>logo.png</code> and alt text <code>A logo.</code>.",
     "initialCode": "<p>Here is a picture:</p>",
-    "validate": "return code.toLowerCase().includes('<img') && code.toLowerCase().includes('src=') && code.toLowerCase().includes('alt=') && code.toLowerCase().includes('logo.png') && code.toLowerCase().includes('a logo.');",
+    "validate": "return code.toLowerCase().includes('<img') && code.toLowerCase().includes('src=') && code.toLowerCase().includes('alt=') && code.toLowerCase().includes('logo.png') && code.toLowerCase().includes('a logo');",
     "successMsg": "Excellent! Images make a page more interesting."
   },
   {

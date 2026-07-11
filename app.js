@@ -18,6 +18,13 @@ editor.setAttribute('autocorrect', 'off');
 editor.setAttribute('spellcheck', 'false');
 editor.setAttribute('data-gramm', 'false');
 
+function updatePreview(code) {
+    const iframeDoc = preview.contentDocument || preview.contentWindow.document;
+    iframeDoc.open();
+    iframeDoc.write(code);
+    iframeDoc.close();
+}
+
 function normalizeLevels(rawLevels) {
     if (!Array.isArray(rawLevels)) return [];
 
@@ -62,7 +69,7 @@ editor.addEventListener('keydown', function (e) {
         const end = this.selectionEnd;
         this.value = this.value.substring(0, start) + '  ' + this.value.substring(end);
         this.selectionStart = this.selectionEnd = start + 2;
-        preview.innerHTML = this.value;
+        updatePreview(this.value);
         feedback.innerHTML = 'Keep typing...';
         feedback.className = '';
     }
@@ -93,7 +100,7 @@ function syncHighlight() {
 }
 
 editor.addEventListener('input', () => {
-    preview.innerHTML = editor.value;
+    updatePreview(editor.value);
     feedback.innerHTML = 'Keep typing...';
     feedback.className = '';
     updateLineNumbers();
@@ -166,7 +173,7 @@ function loadLevel(index) {
     document.getElementById('instructions-content').innerHTML = level.instruction;
 
     editor.value = level.initialCode;
-    preview.innerHTML = editor.value;
+    updatePreview(editor.value);
     updateLineNumbers();
 
     if (levelSelect) {
@@ -276,7 +283,7 @@ function resetLevel() {
     const lvl = levels[currentLevel];
     if (!lvl) return;
     editor.value = lvl.initialCode;
-    preview.innerHTML = lvl.initialCode;
+    updatePreview(lvl.initialCode);
     updateLineNumbers();
     syncHighlight();
     feedback.innerHTML = 'Editor reset to initial code.';
