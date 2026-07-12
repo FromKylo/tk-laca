@@ -29,9 +29,9 @@
   },
   {
     "title": "Bold Text",
-    "instruction": "The <code>&lt;strong&gt;</code> tag makes text bold and important.<br><br><b>Example:</b><br><p><code>Read this: &lt;strong&gt;Important!&lt;/strong&gt; — pay attention.</code></p><br><b>Your Task:</b> Inside your paragraph, wrap the word 'HTML' in a <code>&lt;strong&gt;</code> tag. Note that ONLY the word requires the tag, not the whole sentence!",
-    "initialCode": "<h1>Welcome to my Website</h1>\n<h2>About Me</h2>\n<p>I am a student learning HTML today.</p>",
-    "validate": "return code.toLowerCase().includes('<strong>') && code.toLowerCase().includes('</strong>');",
+    "instruction": "The <code>&lt;strong&gt;</code> tag makes text bold and important. It wraps around the specific word you want to stand out.<br><br><b>Your Task:</b> We want to make the word 'HTML' bold. Replace the underlines (<code>____</code>) around the word 'HTML' with the opening <code>&lt;strong&gt;</code> and closing <code>&lt;/strong&gt;</code> tags.",
+    "initialCode": "<h1>Welcome to my Website</h1>\n<h2>About Me</h2>\n<p>I am a student learning ____HTML____ today.</p>",
+    "validate": "return code.toLowerCase().includes('<strong>') && code.toLowerCase().includes('</strong>') && code.toLowerCase().includes('<strong>html</strong>');",
     "successMsg": "Awesome! The word stands out now."
   },
   {
@@ -57,9 +57,9 @@
   },
   {
     "title": "Hyperlinks",
-    "instruction": "The <code>&lt;a&gt;</code> tag makes a clickable link. You must include the <code>href</code> (hyperlink reference) attribute to tell it where to go.<br><br><b>Example:</b><br><code>&lt;a href=\"https://bing.com\"&gt;Bing&lt;/a&gt;</code><br><br><b>Your Task:</b> Complete the link by filling in the URL and closing tag. Point the link to 'https://google.com'.",
-    "initialCode": "<h1>Welcome to my Website</h1>\n<h2>About Me</h2>\n<p>I am a student learning <strong>HTML</strong> today.</p>\n\n<a href=\"____\">Search on Google</a>",
-    "validate": "return code.toLowerCase().includes('<a ') && code.toLowerCase().includes('href=') && code.toLowerCase().includes('</a>');",
+    "instruction": "The <code>&lt;a&gt;</code> tag makes a clickable link. You must include the <code>href</code> (hyperlink reference) attribute to tell it where to go.<br><br><b>Example:</b><br><code>&lt;a href=\"https://bing.com\"&gt;Bing&lt;/a&gt;</code><br><br><b>⚠️ WARNING:</b> Do NOT click the link in the preview window during this activity, or you might accidentally navigate away from the game!<br><br><b>Your Task:</b> Complete the link by filling in the URL and closing tag. Point the link to 'https://google.com'.",
+    "initialCode": "<h1>Welcome to my Website</h1>\n<h2>About Me</h2>\n<p>I am a student learning <strong>HTML</strong> today.</p>\n\n<a href=\"____\">Search on Google____",
+    "validate": "return code.toLowerCase().includes('<a ') && code.toLowerCase().includes('href=') && code.toLowerCase().includes('</a>') && code.toLowerCase().includes('google.com');",
     "successMsg": "Excellent! You created a hyperlink."
   },
   {
@@ -71,10 +71,10 @@
   },
   {
     "title": "Bullet Lists",
-    "instruction": "To make a list, use the <code>&lt;ul&gt;</code> (unordered list) tag. Inside, each item must be wrapped in an <code>&lt;li&gt;</code> (list item) tag.<br><br><b>Example:</b><br><code>&lt;ul&gt;\n  &lt;li&gt;Apple&lt;/li&gt;&lt;li&gt;Banana&lt;/li&gt;\n&lt;/ul&gt;</code><br><br><b>Your Task:</b> Create a list with two items: 'HTML' and 'CSS'.",
-    "initialCode": "<h1>My Skills</h1>\n<ul>\n</ul>",
-    "validate": "return code.toLowerCase().includes('<ul>') && code.toLowerCase().includes('</ul>') && (code.toLowerCase().match(/<li>/g) || []).length >= 2;",
-    "successMsg": "Great! You created a list structure."
+    "instruction": "To make a bulleted list, use the <code>&lt;ul&gt;</code> (unordered list) tag. Inside the list, every single item needs its own <code>&lt;li&gt;</code> (list item) tags.<br><br><b>Your Task:</b> Inside the <code>&lt;ul&gt;</code> tag below, replace the underlines (<code>____</code>) with <code>&lt;li&gt;</code> and <code>&lt;/li&gt;</code> tags to create two list items: 'HTML' and 'CSS'.",
+    "initialCode": "<h1>My Skills</h1>\n<ul>\n  ____HTML____\n  ____CSS____\n</ul>",
+    "validate": "return code.toLowerCase().includes('<li>html</li>') && code.toLowerCase().includes('<li>css</li>');",
+    "successMsg": "Great! You created a bullet list."
   },
   {
     "title": "The HTML Tag",
@@ -112,13 +112,6 @@
     "successMsg": "Nice! You just used Inline CSS to style your element."
   },
   {
-    "title": "Multiple CSS Properties",
-    "instruction": "You can add more than one CSS property to the same style attribute by separating them with semicolons.<br><br><b>Example:</b><br><code>&lt;h1 style=\"color: red; text-align: center;\"&gt;Hello&lt;/h1&gt;</code><br><br><b>Your Task:</b> Keep the existing background color and add two new properties to the heading: <code>color: blue</code> and <code>text-align: center</code>.",
-    "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1 style=\"background-color: yellow;\">Hello World!</h1>\n</body>\n</html>",
-    "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('color: blue') && code.toLowerCase().includes('text-align: center') && code.toLowerCase().includes('background-color: yellow');",
-    "successMsg": "Excellent! You combined multiple CSS properties."
-  },
-  {
     "title": "Text Alignment",
     "instruction": "The <code>text-align</code> property controls where text appears horizontally on the page.<br><br><b>Example:</b><br><code>&lt;p style=\"text-align: center;\"&gt;Hello&lt;/p&gt;</code><br><br><b>Your Task:</b> Add a <code>text-align: center</code> style to the paragraph so it appears centered.",
     "initialCode": "<p>Hello World!</p>",
@@ -140,10 +133,17 @@
     "successMsg": "Great! You added background-color to your styling toolkit."
   },
   {
+    "title": "Multiple CSS Properties",
+    "instruction": "You can add more than one CSS property to the same style attribute by separating them with semicolons.<br><br><b>Example:</b><br><code>&lt;h1 style=\"color: red; text-align: center;\"&gt;Hello&lt;/h1&gt;</code><br><br><b>Your Task:</b> Keep the existing background color and add two new properties to the heading: <code>color: blue</code> and <code>text-align: center</code>.",
+    "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1 style=\"background-color: yellow;\">Hello World!</h1>\n</body>\n</html>",
+    "validate": "return code.toLowerCase().includes('style=') && code.toLowerCase().includes('color: blue') && code.toLowerCase().includes('text-align: center') && code.toLowerCase().includes('background-color: yellow');",
+    "successMsg": "Excellent! You combined multiple CSS properties."
+  },
+{
     "title": "Internal Style Sheets",
-    "instruction": "Instead of styling every single tag inline, you can use <b>Internal CSS</b>. By adding a <code>&lt;style&gt;</code> tag inside your <code>&lt;head&gt;</code>, you can style all elements of a certain type at once!<br><br><b>Example:</b><br><code>&lt;style&gt;<br>&nbsp;&nbsp;p { color: green; }<br>&lt;/style&gt;</code><br><br><b>Your Task:</b> Add a <code>&lt;style&gt;</code> tag inside the <code>&lt;head&gt;</code> and set the color of all <code>&lt;h1&gt;</code> tags to 'red'.",
-    "initialCode": "<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1>First Header</h1>\n  <h1>Second Header</h1>\n</body>\n</html>",
-    "validate": "return code.toLowerCase().includes('<style>') && code.toLowerCase().includes('</style>') && code.toLowerCase().includes('color') && code.toLowerCase().includes('red');",
+    "instruction": "Instead of styling every single tag one by one, you can use <b>Internal CSS</b> to style everything at once! You do this by putting CSS rules inside a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> section.<br><br><b>Example Rule:</b> <code>p { color: green; }</code> (This makes all paragraphs green).<br><br><b>Your Task:</b> Inside the <code>&lt;style&gt;</code> tag below, replace the underline (<code>____</code>) with a rule that makes all <code>h1</code> tags <code>red</code>.",
+    "initialCode": "<html>\n<head>\n  <title>My Site</title>\n  <style>\n    ____\n  </style>\n</head>\n<body>\n  <h1>First Header</h1>\n  <h1>Second Header</h1>\n</body>\n</html>",
+    "validate": "return code.toLowerCase().includes('h1') && code.toLowerCase().includes('color') && code.toLowerCase().includes('red');",
     "successMsg": "Magaling! You just styled multiple elements at once using Internal CSS."
   },
   {
