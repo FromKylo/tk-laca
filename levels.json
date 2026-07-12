@@ -78,29 +78,29 @@
   },
   {
     "title": "The HTML Tag",
-    "instruction": "The document structure is almost complete. The DOCTYPE and the existing <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> content are already there, so your only job is to add the missing outer <code>&lt;html&gt;</code> opening and closing tags.<br><br><b>Your Task:</b> Wrap the current <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections in a single <code>&lt;html&gt;</code> element.",
-    "initialCode": "<!DOCTYPE html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n</body>",
+    "instruction": "The document structure is almost complete. The DOCTYPE and the existing <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> content are already there, but the main wrapper is missing. The entire webpage needs to be wrapped inside an <code>&lt;html&gt;</code> tag.<br><br><b>Your Task:</b> Replace the underlines (<code>____</code>) with the opening <code>&lt;html&gt;</code> and closing <code>&lt;/html&gt;</code> tags to wrap the entire page content.",
+    "initialCode": "<!DOCTYPE html>\n____\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n</body>\n____",
     "validate": "return code.toLowerCase().includes('<html>') && code.toLowerCase().includes('</html>') && code.toLowerCase().indexOf('<html>') < code.toLowerCase().indexOf('<head>');",
     "successMsg": "Almost done! You've given your page its correct document wrapper."
   },
   {
     "title": "The Head Tag",
-    "instruction": "The page already has an <code>&lt;html&gt;</code> wrapper and the visible content, so only the metadata section is missing. Add the missing <code>&lt;head&gt;</code> opening and closing tags around the page title so it appears before the content.<br><br><b>Your Task:</b> Place the existing <code>&lt;title&gt;</code> inside a <code>&lt;head&gt;</code> section.",
-    "initialCode": "<!DOCTYPE html>\n<html>\n<title>My Site</title>\n<body>\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n</body>\n</html>",
+    "instruction": "The page already has an <code>&lt;html&gt;</code> wrapper and visible content, but the metadata section is missing. The <code>&lt;title&gt;</code> needs to be placed inside a <code>&lt;head&gt;</code> section, which goes right before the body.<br><br><b>Your Task:</b> Replace the underlines (<code>____</code>) with the opening <code>&lt;head&gt;</code> and closing <code>&lt;/head&gt;</code> tags around the page title.",
+    "initialCode": "<!DOCTYPE html>\n<html>\n____\n  <title>My Site</title>\n____\n<body>\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n</body>\n</html>",
     "validate": "return code.toLowerCase().includes('<head>') && code.toLowerCase().includes('</head>') && code.toLowerCase().includes('<title>') && code.toLowerCase().indexOf('</head>') < code.toLowerCase().indexOf('<body>');",
     "successMsg": "Good job! Your page now has the metadata it needs."
   },
   {
     "title": "The Body Tag",
-    "instruction": "The page already has the proper <code>&lt;html&gt;</code> and <code>&lt;head&gt;</code> sections, so only the visible content wrapper is missing. Add the missing <code>&lt;body&gt;</code> opening and closing tags around the heading, paragraph, and link.<br><br><b>Your Task:</b> Wrap your current visible content inside a single <code>&lt;body&gt;</code> section.",
-    "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My Site</title>\n</head>\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n</html>",
+    "instruction": "The page already has the proper <code>&lt;html&gt;</code> and <code>&lt;head&gt;</code> sections, but the visible content wrapper is missing. All headings, paragraphs, and links must be kept safely inside the body section.<br><br><b>Your Task:</b> Replace the underlines (<code>____</code>) with the opening <code>&lt;body&gt;</code> and closing <code>&lt;/body&gt;</code> tags to wrap the visible content.",
+    "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My Site</title>\n</head>\n____\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n____\n</html>",
     "validate": "return code.toLowerCase().includes('<body>') && code.toLowerCase().includes('</body>') && code.toLowerCase().indexOf('<body>') < code.toLowerCase().indexOf('<h1>');",
     "successMsg": "Great! Your content is now safely inside the body."
   },
   {
     "title": "Document Type",
-    "instruction": "The page structure is already complete, so only the very first line is missing. Add the <code>&lt;!DOCTYPE html&gt;</code> declaration at the top of the document so the browser knows it's reading an HTML5 page. Like <code>&lt;img&gt;</code>, this is one of the few tags that does not need a closing tag.<br><br><b>Your Task:</b> Add the DOCTYPE declaration at the very top of your document.",
-    "initialCode": "<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n</body>\n</html>",
+    "instruction": "The page structure is complete, but the very first line is missing. A browser needs to know it's reading an HTML5 page, so we use the <code>&lt;!DOCTYPE html&gt;</code> declaration at the top.<br><br><b>Your Task:</b> Replace the underline (<code>____</code>) at the very top of your document with the <code>&lt;!DOCTYPE html&gt;</code> declaration.",
+    "initialCode": "____\n<html>\n<head>\n  <title>My Site</title>\n</head>\n<body>\n  <h1>Welcome to my Website</h1>\n  <h2>About Me</h2>\n  <p>I am a student learning <strong>HTML</strong> today.</p>\n  <a href=\"https://google.com\">Search on Google</a>\n</body>\n</html>",
     "validate": "return code.toLowerCase().includes('<!doctype html>') && code.toLowerCase().indexOf('<!doctype html>') < code.toLowerCase().indexOf('<html>');",
     "successMsg": "Congratulations! You built a structurally perfect HTML document!"
   },
