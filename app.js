@@ -127,7 +127,7 @@ function unlockLevelSelector() {
     const enteredPassword = passwordInput.value;
     const normalizedPassword = enteredPassword.trim().toLowerCase();
 
-    if (normalizedPassword === 'laca2026') {
+    if (normalizedPassword === 'HTMLhacker') {
         levelSelect.style.display = 'inline-block';
         unlockLevelBtn.style.display = 'none';
         passwordInput.style.display = 'none';
