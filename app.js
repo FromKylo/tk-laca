@@ -262,7 +262,7 @@ async function startExamMode() {
 
 async function startLevelSelectorFromOverlay() {
     const pw = document.getElementById('overlay-password').value.trim().toLowerCase();
-    if (pw === 'laca2026') {
+    if (pw === 'HTMLhacker') {
         window.gameMode = 'selector';
         levelSelect.style.display = 'inline-block';
         unlockLevelBtn.style.display = 'none';
