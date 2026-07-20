@@ -127,7 +127,7 @@ function unlockLevelSelector() {
     const enteredPassword = passwordInput.value;
     const normalizedPassword = enteredPassword.trim().toLowerCase();
 
-    if (normalizedPassword === 'HTMLhacker') {
+    if (normalizedPassword === 'htmlhacker') {
         levelSelect.style.display = 'inline-block';
         unlockLevelBtn.style.display = 'none';
         passwordInput.style.display = 'none';
@@ -262,7 +262,7 @@ async function startExamMode() {
 
 async function startLevelSelectorFromOverlay() {
     const pw = document.getElementById('overlay-password').value.trim().toLowerCase();
-    if (pw === 'HTMLhacker') {
+    if (pw === 'htmlhacker') {
         window.gameMode = 'selector';
         levelSelect.style.display = 'inline-block';
         unlockLevelBtn.style.display = 'none';
